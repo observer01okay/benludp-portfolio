@@ -1,0 +1,777 @@
+/* Ben Nurhaci Lu — portfolio
+   Locked to pixel measurements from Adobe screenshot
+   (Screenshot_2026-07-27_at_22.30.14, 1024px wide):
+   - grid width = 653px = 63.77% → side inset = 17.87% each
+   - tile ≈ 208×116 (aspect 1.79 ≈ 16/9)
+   - H gutters = 14–15px = 1.37% of viewport
+   - V gutter = 16px
+   - header → grid ≈ 75px = 7.3% of viewport
+   - nav left ≈ 7.5% (earlier measure)
+*/
+
+:root {
+  --bg: #f7f7f7;
+  --ink: #111111;
+  --muted: #666;
+  --font: "Helvetica Neue", Helvetica, "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+
+  --nav-inset: 7.5vw;
+  --grid-inset: 17.87vw; /* measured: L=183/1024 */
+  --gap: 1.37vw;         /* measured: 14/1024 */
+  --header-top: 4.7vw;
+  --header-to-grid: 7.32vw; /* measured: 75/1024 */
+  --nav-size: clamp(10px, 1.05vw, 12px);
+  --brand-size: clamp(15.4px, 1.595vw, 18.7px); /* +10% from prior 14 / 1.45 / 17 */
+  --nav-gap: 1.5vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header: nav left; brand centered; bottoms aligned */
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--header-top) var(--nav-inset) var(--header-to-grid);
+}
+
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: var(--nav-gap);
+  width: max-content;
+  max-width: calc(50% - 9rem);
+  margin: 0;
+  font-size: var(--nav-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.nav a:hover,
+.nav a.is-active {
+  opacity: 0.45;
+}
+
+.brand {
+  position: absolute;
+  left: 50%;
+  top: auto;
+  bottom: var(--header-to-grid);
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: var(--brand-size);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: auto;
+}
+
+main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--grid-inset) 96px;
+}
+
+/* WORK GRID — exact Adobe proportions, scales with viewport (no px cap) */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  width: 100%;
+  margin: 0;
+  padding-bottom: 100px;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+  aspect-ratio: 16 / 9;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease, opacity 0.3s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.work-meta {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  padding: 12px;
+}
+
+.work-card:hover .work-meta {
+  opacity: 1;
+}
+
+.work-title,
+.work-year {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.lock::after {
+  content: "🔒";
+  font-size: 11px;
+}
+
+/* STILLS — vertical stack of large images */
+.stills-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding-bottom: 100px;
+}
+
+.stills-stack img {
+  width: min(100%, 920px);
+}
+
+/* REEL */
+.reel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.reel-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.reel-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.reel-credit {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* INFO */
+.info {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 100px;
+}
+
+.info-portrait {
+  width: min(100%, 420px);
+  margin: 0 auto 36px;
+}
+
+.info-copy {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222;
+}
+
+.info-copy p {
+  margin: 0 0 1.15em;
+}
+
+/* CONTACT — pixel-matched to Adobe @1024:
+   tagline y≈259 / 25px / #373737; icons 100×100 in two halves of 655px;
+   icon y≈407; chinese y≈591 / 13px */
+.contact {
+  width: min(100%, 655px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 124px 0 15px;
+}
+
+.contact-tagline {
+  margin: 0;
+  font-family: var(--font);
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-top: 121px;
+  align-items: center;
+}
+
+.icon-link {
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: 100px;
+  height: 100px;
+  transition: opacity 0.2s ease;
+}
+
+.icon-link svg {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.icon-link:hover {
+  opacity: 0.7;
+}
+
+/* SITE FOOTER — same face/weight/color as Contact tagline */
+.site-footer {
+  width: min(100%, 655px);
+  margin: 0 auto;
+  padding: 69px 0 85px;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ink);
+}
+
+/* PROJECT TITLE — Helvetica Neue, sized to match Adobe title mass
+   (Bebas Kai @30px ≈ Helvetica bold @~17–18px; keep centered caps) */
+.project-title {
+  margin: 0 0 22px;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font);
+  font-size: clamp(14px, 1.55vw, 17px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.project-gallery img {
+  width: min(100%, 960px);
+}
+
+/*
+  Project stills grid — Adobe media_collection
+  - default: N equal columns (usually 3)
+  - .layout-two-one: 2 on top, 1 full-width below (Kissinger / Enlightenment)
+  - .layout-last-full: N-col grid, last still spans full width (American Body)
+  - .layout-fill-last-two: 3-col rows, last row of 2 spans full width (Child in Winter)
+  - gap from Adobe transparent borders (usually 8px; Bisonte 10px)
+*/
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--project-cols, 3), 1fr);
+  gap: var(--project-gap, 8px);
+  width: 100%;
+}
+
+.project-grid.layout-two-one {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project-grid.layout-two-one img:nth-child(n + 3) {
+  grid-column: 1 / -1;
+}
+
+.project-grid.layout-last-full img:last-child {
+  grid-column: 1 / -1;
+}
+
+/* 6 tracks: normal stills span 2 (= 3-col). Last two leftover span 3 (= half each). */
+.project-grid.layout-fill-last-two {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.project-grid.layout-fill-last-two > * {
+  grid-column: span 2;
+}
+
+.project-grid.layout-fill-last-two > *:nth-last-child(2):nth-child(3n + 1),
+.project-grid.layout-fill-last-two > *:nth-last-child(1):nth-child(3n + 2) {
+  grid-column: span 3;
+}
+
+.project-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--project-aspect, 2.4 / 1);
+  object-fit: cover;
+  /* Kill subpixel hairlines some browsers draw at cover edges */
+  overflow: hidden;
+  backface-visibility: hidden;
+  cursor: zoom-in;
+}
+
+.project-gallery img,
+.stills-stack img,
+.info-portrait {
+  cursor: zoom-in;
+}
+
+.lb-trigger:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* LIGHTBOX — Adobe-style full image viewer */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: #fff;
+  color: #111;
+}
+
+.lightbox[hidden] {
+  display: none !important;
+}
+
+.lightbox-stage {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 40px 3vw 12px; /* side inset ~3vw — between edge-to-edge and the old 72px */
+  cursor: zoom-out;
+}
+
+.lightbox-image {
+  /* Bigger than before (was capped at 1400px), still leaves room for side gutters + thumb strip */
+  max-width: min(94vw, 1800px);
+  max-height: calc(100vh - 110px); /* reserve ~110px for close + thumb row */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: #fff;
+  color: #111;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+.lightbox-thumbs {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  padding: 12px 16px 20px;
+  border-top: 1px solid #e8e8e8;
+  background: #fff;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.lightbox-thumb {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid transparent;
+  background: #ddd;
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.lightbox-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox-thumb.is-active {
+  opacity: 1;
+  border-color: #111;
+}
+
+@media (max-width: 700px) {
+  .lightbox-stage {
+    padding: 48px 12px 10px;
+  }
+
+  .lightbox-image {
+    max-width: 96vw;
+    max-height: calc(100vh - 100px);
+  }
+
+  .lightbox-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 24px;
+  }
+
+  .lightbox-thumb {
+    width: 56px;
+    height: 32px;
+  }
+}
+
+.project-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* measured ~40px between Vimeo players */
+  width: 100%;
+  margin-top: 48px;
+}
+
+.project-video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.project-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-video-local {
+  padding-top: 0;
+  background: transparent;
+}
+
+.local-video-shell {
+  position: relative;
+  width: 100%;
+  background: #111;
+  aspect-ratio: var(--local-video-aspect, 16 / 9);
+  overflow: hidden;
+}
+
+.local-video-shell video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: var(--local-video-fit, contain);
+  object-position: var(--local-video-position, center);
+  background: #000;
+}
+
+/* Adobe-style circular play affordance on self-hosted videos */
+.local-video-play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.local-video-play-icon {
+  width: clamp(56px, 7vw, 72px);
+  height: clamp(56px, 7vw, 72px);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  position: relative;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.local-video-play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #2a1014;
+}
+
+.local-video-play:hover .local-video-play-icon,
+.local-video-play:focus-visible .local-video-play-icon {
+  transform: scale(1.06);
+}
+
+.local-video-shell.is-playing .local-video-play {
+  display: none;
+}
+
+.local-video-shell.is-playing video {
+  cursor: pointer;
+}
+
+.video-caption {
+  margin: 10px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  text-align: center;
+}
+
+.project-awards {
+  margin: 64px auto 0;
+  max-width: 720px;
+  text-align: center;
+  color: #9a9a9a;
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 2.2;
+}
+
+.project-awards p {
+  margin: 0;
+}
+
+/* PASSWORD GATE */
+.password-gate {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: center;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  max-width: 420px;
+  margin: 80px auto;
+}
+
+.password-form[hidden],
+.password-gate.is-unlocked .password-form {
+  display: none !important;
+}
+
+.password-content {
+  width: 100%;
+}
+
+.password-content[hidden] {
+  display: none !important;
+}
+
+.password-form label {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.password-form input {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+}
+
+.password-form button {
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 12px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.password-form button:hover {
+  opacity: 0.85;
+}
+
+.password-error {
+  color: #b00020;
+  font-size: 13px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-header {
+    padding-bottom: 64px;
+  }
+
+  .brand {
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    display: block;
+    margin: 0 0 12px;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .nav {
+    max-width: none;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .contact {
+    padding-top: 72px;
+  }
+
+  .contact-links {
+    margin-top: 72px;
+  }
+
+  .icon-link,
+  .icon-link svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  .site-footer {
+    padding: 48px 0 64px;
+  }
+}

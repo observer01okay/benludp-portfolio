@@ -1,0 +1,701 @@
+{
+  "brand": "Ben Nurhaci Lu Cinematographer",
+  "name": "Ben Lu",
+  "email": "benludp@gmail.com",
+  "instagram": "https://www.instagram.com/benludp/",
+  "contact_tagline": "What's the Hesitant?",
+  "contact_chinese": "呂尚睿. 努爾哈赤",
+  "reel_vimeo_id": "1096158361",
+  "reel_credit": "Editor/sound designer: Shannon O'Shea",
+  "info_text": "Ben Nurhaci Lu is a cinematographer whose work carries the quiet gravity of someone who listens closely — to light, to spaces, to the human heart.\n\nBased in LA, by way of Taiwan, Ben’s approach to the image is less about imposing a style, and more about revealing the soul of a story. His eye is endlessly versatile — shifting from the tender to the raw, the grand to the intimate — yet his work always holds a throughline of honesty and restraint. Every frame feels lived-in, textured, alive.\n\nThere is no showboating here, no need to announce the hand behind the camera. Instead, Ben folds seamlessly into the fabric of the world he helps create, guiding the audience with an invisible hand. Light, shadow, color, composition — all are treated as instruments in service of something larger: emotion, connection, memory.\n\nHis greatest gift lies not just in his technical command — which is considerable — but in his ability to disappear into a story while sharpening its emotional impact. Directors trust him not only for his craft, but for his intuition; for knowing when an image should roar, and when it should whisper.\n\nBen Nurhaci Lu’s cinematography is not designed to dazzle at first glance — it lingers, unfolding quietly, leaving an imprint you carry long after the screen fades to black.",
+  "info_images": [
+    "assets/info/00.jpg"
+  ],
+  "stills": [
+    "assets/stills/00.jpg",
+    "assets/stills/01.jpg",
+    "assets/stills/02.jpg",
+    "assets/stills/03.jpg",
+    "assets/stills/04.jpg",
+    "assets/stills/05.jpg",
+    "assets/stills/06.jpg",
+    "assets/stills/07.jpg",
+    "assets/stills/08.jpg",
+    "assets/stills/09.jpg",
+    "assets/stills/10.jpg",
+    "assets/stills/11.jpg",
+    "assets/stills/12.jpg",
+    "assets/stills/13.jpg",
+    "assets/stills/14.jpg",
+    "assets/stills/15.jpg",
+    "assets/stills/16.jpg",
+    "assets/stills/17.jpg",
+    "assets/stills/18.jpg",
+    "assets/stills/19.jpg",
+    "assets/stills/20.jpg",
+    "assets/stills/21.jpg"
+  ],
+  "projects": [
+    {
+      "slug": "the-grossness-of-closeness",
+      "title": "Grossness of Closeness",
+      "year": 2025,
+      "thumb": "assets/work/the-grossness-of-closeness.jpg",
+      "password": true,
+      "images": [
+        "assets/projects/the-grossness-of-closeness/00.jpg",
+        "assets/projects/the-grossness-of-closeness/01.jpg",
+        "assets/projects/the-grossness-of-closeness/02.jpg",
+        "assets/projects/the-grossness-of-closeness/03.jpg",
+        "assets/projects/the-grossness-of-closeness/04.jpg",
+        "assets/projects/the-grossness-of-closeness/05.jpg",
+        "assets/projects/the-grossness-of-closeness/06.jpg",
+        "assets/projects/the-grossness-of-closeness/07.jpg",
+        "assets/projects/the-grossness-of-closeness/08.jpg",
+        "assets/projects/the-grossness-of-closeness/09.jpg",
+        "assets/projects/the-grossness-of-closeness/10.jpg",
+        "assets/projects/the-grossness-of-closeness/11.jpg",
+        "assets/projects/the-grossness-of-closeness/12.jpg",
+        "assets/projects/the-grossness-of-closeness/13.jpg",
+        "assets/projects/the-grossness-of-closeness/14.jpg",
+        "assets/projects/the-grossness-of-closeness/15.jpg",
+        "assets/projects/the-grossness-of-closeness/16.jpg",
+        "assets/projects/the-grossness-of-closeness/17.jpg",
+        "assets/projects/the-grossness-of-closeness/18.jpg",
+        "assets/projects/the-grossness-of-closeness/19.jpg",
+        "assets/projects/the-grossness-of-closeness/20.jpg",
+        "assets/projects/the-grossness-of-closeness/21.jpg",
+        "assets/projects/the-grossness-of-closeness/22.jpg",
+        "assets/projects/the-grossness-of-closeness/23.jpg",
+        "assets/projects/the-grossness-of-closeness/24.jpg",
+        "assets/projects/the-grossness-of-closeness/25.jpg",
+        "assets/projects/the-grossness-of-closeness/26.jpg",
+        "assets/projects/the-grossness-of-closeness/27.jpg",
+        "assets/projects/the-grossness-of-closeness/28.jpg",
+        "assets/projects/the-grossness-of-closeness/29.jpg",
+        "assets/projects/the-grossness-of-closeness/30.jpg",
+        "assets/projects/the-grossness-of-closeness/31.jpg",
+        "assets/projects/the-grossness-of-closeness/32.jpg",
+        "assets/projects/the-grossness-of-closeness/33.jpg",
+        "assets/projects/the-grossness-of-closeness/34.jpg",
+        "assets/projects/the-grossness-of-closeness/35.jpg",
+        "assets/projects/the-grossness-of-closeness/36.jpg",
+        "assets/projects/the-grossness-of-closeness/37.jpg",
+        "assets/projects/the-grossness-of-closeness/38.jpg",
+        "assets/projects/the-grossness-of-closeness/39.jpg",
+        "assets/projects/the-grossness-of-closeness/40.jpg",
+        "assets/projects/the-grossness-of-closeness/41.jpg"
+      ],
+      "layout": "grid",
+      "aspect": "2.4 / 1",
+      "grid_gap": "8px",
+      "videos": [
+        {
+          "id": "1128635392",
+          "title": "Grossness of Closeness trailer",
+          "provider": "vimeo"
+        },
+        {
+          "id": "1088970340",
+          "title": "Grossness of Closeness scene montage",
+          "provider": "vimeo"
+        }
+      ],
+      "awards": [
+        "Dir. Cathal Power",
+        "Cleveland International Film Festival — 2026",
+        "Phoenix Film Festival — 2026",
+        "HollyShorts Comedy Film Fest — 2026",
+        "Julien Dubuque International Film Festival — 2026",
+        "Gasparilla International Film Fest — 2026",
+        "Garden State Film Festival — 2026 Best Student Short",
+        "Durango Independent Film Festival — 2026 Best Narrative Short",
+        "Waco Independent Film Festival — 2026 Best Production Design Nomination",
+        "Snake Alley Film Festival — 2026"
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "columns": 3
+    },
+    {
+      "slug": "bisonte",
+      "title": "Bisonte",
+      "year": 2025,
+      "thumb": "assets/work/bisonte.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/bisonte/00.jpg",
+        "assets/projects/bisonte/01.jpg",
+        "assets/projects/bisonte/02.jpg",
+        "assets/projects/bisonte/03.jpg",
+        "assets/projects/bisonte/04.jpg",
+        "assets/projects/bisonte/05.jpg",
+        "assets/projects/bisonte/06.jpg",
+        "assets/projects/bisonte/07.jpg",
+        "assets/projects/bisonte/08.jpg",
+        "assets/projects/bisonte/09.jpg",
+        "assets/projects/bisonte/10.jpg",
+        "assets/projects/bisonte/11.jpg",
+        "assets/projects/bisonte/12.jpg",
+        "assets/projects/bisonte/13.jpg",
+        "assets/projects/bisonte/14.jpg",
+        "assets/projects/bisonte/15.jpg",
+        "assets/projects/bisonte/16.jpg",
+        "assets/projects/bisonte/17.jpg",
+        "assets/projects/bisonte/18.jpg",
+        "assets/projects/bisonte/19.jpg",
+        "assets/projects/bisonte/20.jpg"
+      ],
+      "layout": "grid",
+      "aspect": "2 / 1",
+      "grid_gap": "10px",
+      "videos": [
+        {
+          "id": "1128092668",
+          "title": "Bisonte",
+          "provider": "vimeo"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Juan Zuloaga Eslait",
+        "Panavision New filmmakers program"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "kissinger-takes-paris",
+      "title": "Kissinger Takes Paris",
+      "year": 2024,
+      "thumb": "assets/work/kissinger-takes-paris.png",
+      "password": false,
+      "images": [
+        "assets/projects/kissinger-takes-paris/00.png",
+        "assets/projects/kissinger-takes-paris/01.png",
+        "assets/projects/kissinger-takes-paris/02.png"
+      ],
+      "layout": "two-one",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "Dir. Jeffrey Stanzler",
+        "Cannes Film Festival private screening",
+        "In development into feature film — Kissinger Takes Paris"
+      ],
+      "grid_gap": "8px",
+      "aspect": "2.4 / 1"
+    },
+    {
+      "slug": "wabi-sabi",
+      "title": "Wabi Sabi",
+      "year": 2024,
+      "thumb": "assets/work/wabi-sabi.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/wabi-sabi/00.jpg",
+        "assets/projects/wabi-sabi/01.jpg",
+        "assets/projects/wabi-sabi/02.jpg",
+        "assets/projects/wabi-sabi/03.jpg",
+        "assets/projects/wabi-sabi/04.jpg",
+        "assets/projects/wabi-sabi/05.jpg"
+      ],
+      "layout": "grid",
+      "aspect": "16 / 9",
+      "grid_gap": "8px",
+      "videos": [
+        {
+          "provider": "local",
+          "src": "assets/videos/wabi-sabi-opening.mp4",
+          "title": "Wabi Sabi — Opening",
+          "poster": "assets/videos/posters/wabi-sabi-opening.jpg"
+        },
+        {
+          "provider": "local",
+          "src": "assets/videos/wabi-sabi-steevie-gets-punched.mp4",
+          "title": "Wabi Sabi — Steevie Gets Punched",
+          "poster": "assets/videos/posters/wabi-sabi-steevie-gets-punched.jpg"
+        },
+        {
+          "provider": "local",
+          "src": "assets/videos/wabi-sabi-the-punch.mp4",
+          "title": "Wabi Sabi — The Punch",
+          "poster": "assets/videos/posters/wabi-sabi-the-punch.jpg"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Jake Fuzak"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "sparkle-pets",
+      "title": "Sparkle Pets",
+      "year": 2024,
+      "thumb": "assets/work/sparkle-pets.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/sparkle-pets/00.jpg",
+        "assets/projects/sparkle-pets/01.jpg",
+        "assets/projects/sparkle-pets/02.jpg",
+        "assets/projects/sparkle-pets/03.jpg",
+        "assets/projects/sparkle-pets/04.jpg",
+        "assets/projects/sparkle-pets/05.jpg",
+        "assets/projects/sparkle-pets/06.jpg",
+        "assets/projects/sparkle-pets/07.jpg",
+        "assets/projects/sparkle-pets/08.jpg",
+        "assets/projects/sparkle-pets/09.jpg",
+        "assets/projects/sparkle-pets/10.jpg",
+        "assets/projects/sparkle-pets/11.jpg",
+        "assets/projects/sparkle-pets/12.jpg",
+        "assets/projects/sparkle-pets/13.jpg"
+      ],
+      "layout": "fill-last-two",
+      "aspect": "8 / 3",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir: Cathal Power"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "american-body",
+      "title": "American Body",
+      "year": 2023,
+      "thumb": "assets/work/american-body.png",
+      "password": false,
+      "images": [
+        "assets/projects/american-body/00.png",
+        "assets/projects/american-body/01.png",
+        "assets/projects/american-body/02.png",
+        "assets/projects/american-body/03.png",
+        "assets/projects/american-body/04.png",
+        "assets/projects/american-body/05.png",
+        "assets/projects/american-body/06.png",
+        "assets/projects/american-body/07.png",
+        "assets/projects/american-body/08.png",
+        "assets/projects/american-body/09.png",
+        "assets/projects/american-body/10.png",
+        "assets/projects/american-body/11.png",
+        "assets/projects/american-body/12.png",
+        "assets/projects/american-body/13.png",
+        "assets/projects/american-body/14.png",
+        "assets/projects/american-body/15.png",
+        "assets/projects/american-body/16.png",
+        "assets/projects/american-body/17.png",
+        "assets/projects/american-body/18.png",
+        "assets/projects/american-body/19.png",
+        "assets/projects/american-body/20.png",
+        "assets/projects/american-body/21.png",
+        "assets/projects/american-body/22.png",
+        "assets/projects/american-body/23.png",
+        "assets/projects/american-body/24.png"
+      ],
+      "layout": "last-full",
+      "aspect": "2.39 / 1",
+      "grid_gap": "8px",
+      "videos": [
+        {
+          "id": "xLx1J2gfU6g",
+          "title": "American Body",
+          "provider": "youtube"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Juan Zuloaga Eslait",
+        "2023 Student Oscar",
+        "San Antonio Film Festival- 2024 Best College Film winner",
+        "DIFF shorts- 2024 Best short nominee",
+        "LA international Shorts- 2023 short film nominee"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "enlightenment",
+      "title": "Enlightenment",
+      "year": 2022,
+      "thumb": "assets/work/enlightenment.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/enlightenment/00.jpg",
+        "assets/projects/enlightenment/01.jpg",
+        "assets/projects/enlightenment/02.jpg"
+      ],
+      "layout": "two-one",
+      "videos": [
+        {
+          "id": "nWJKVkWYfYw",
+          "title": "Enlightenment",
+          "provider": "youtube"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "dir./DP Ben nurhaci Lu"
+      ],
+      "grid_gap": "8px",
+      "aspect": "2 / 1",
+      "columns": 2
+    },
+    {
+      "slug": "ping-tung-commercial-fest",
+      "title": "Ping Tung Commercial fest",
+      "year": 2022,
+      "thumb": "assets/work/ping-tung-commercial-fest.jpg",
+      "password": false,
+      "images": [
+        "assets/work/ping-tung-commercial-fest.jpg"
+      ],
+      "layout": "stack",
+      "videos": [
+        {
+          "id": "pOCdcTTJoh0",
+          "title": "Ping Tung Commercial fest",
+          "provider": "youtube"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir: 張顥"
+      ]
+    },
+    {
+      "slug": "child-in-winter",
+      "title": "Child in Winter",
+      "year": 2021,
+      "thumb": "assets/work/child-in-winter.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/child-in-winter/00.jpg",
+        "assets/projects/child-in-winter/01.jpg",
+        "assets/projects/child-in-winter/02.jpg",
+        "assets/projects/child-in-winter/03.jpg",
+        "assets/projects/child-in-winter/04.jpg"
+      ],
+      "layout": "fill-last-two",
+      "aspect": "16 / 9",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir. 張莊敬",
+        "Taiwan Public Television Service program (2022)",
+        "Aix-en-Provence International Short Film Festival (2022)"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "as-usaul",
+      "title": "As Usual",
+      "year": 2021,
+      "thumb": "assets/work/as-usaul.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/as-usaul/00.png",
+        "assets/projects/as-usaul/01.png",
+        "assets/projects/as-usaul/02.png",
+        "assets/projects/as-usaul/03.png",
+        "assets/projects/as-usaul/04.png",
+        "assets/projects/as-usaul/05.png",
+        "assets/projects/as-usaul/06.jpg"
+      ],
+      "layout": "last-full",
+      "aspect": "2.2 / 1",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir. 林孍"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "90",
+      "title": "90 後的修羅之路",
+      "year": 2021,
+      "thumb": "assets/work/90.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/90/00.jpg",
+        "assets/projects/90/01.png",
+        "assets/projects/90/02.png",
+        "assets/projects/90/03.png",
+        "assets/projects/90/04.png",
+        "assets/projects/90/05.png",
+        "assets/projects/90/06.png",
+        "assets/projects/90/07.png"
+      ],
+      "layout": "grid",
+      "aspect": "2.4 / 1",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir. 何查克"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "copy-of-bisonte",
+      "title": "Partner",
+      "year": 2025,
+      "thumb": "assets/work/copy-of-bisonte.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/copy-of-bisonte/00.jpg",
+        "assets/projects/copy-of-bisonte/01.jpg",
+        "assets/projects/copy-of-bisonte/02.jpg",
+        "assets/projects/copy-of-bisonte/03.jpg",
+        "assets/projects/copy-of-bisonte/04.jpg",
+        "assets/projects/copy-of-bisonte/05.jpg",
+        "assets/projects/copy-of-bisonte/06.jpg"
+      ],
+      "layout": "last-full",
+      "aspect": "16 / 9",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "Dir. Ng Ka Lon",
+        "Streaming on Giloo",
+        "2022 Macao Youth Film fest screening",
+        "2023 Macao Local View Power",
+        "2023 Golden Harvest Nomination",
+        "2021 Macao Culture center"
+      ],
+      "columns": 3
+    },
+    {
+      "slug": "safe-and-sound",
+      "title": "Safe and Sound",
+      "year": 2020,
+      "thumb": "assets/work/safe-and-sound.jpg",
+      "password": false,
+      "images": [
+        "assets/projects/safe-and-sound/00.jpg",
+        "assets/projects/safe-and-sound/01.jpg",
+        "assets/projects/safe-and-sound/02.jpg",
+        "assets/projects/safe-and-sound/03.jpg",
+        "assets/projects/safe-and-sound/04.png",
+        "assets/projects/safe-and-sound/05.jpg"
+      ],
+      "layout": "grid",
+      "aspect": "2.239 / 1",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir. Andy chang",
+        "2022 Best Student Short- Independent Shorts Awards"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "blowing-in-the-wind",
+      "title": "Blowing in the Wind",
+      "year": 2019,
+      "thumb": "assets/work/blowing-in-the-wind.png",
+      "password": false,
+      "images": [
+        "assets/projects/blowing-in-the-wind/00.png",
+        "assets/projects/blowing-in-the-wind/01.png",
+        "assets/projects/blowing-in-the-wind/02.png",
+        "assets/projects/blowing-in-the-wind/03.png",
+        "assets/projects/blowing-in-the-wind/04.png",
+        "assets/projects/blowing-in-the-wind/05.png",
+        "assets/projects/blowing-in-the-wind/06.png",
+        "assets/projects/blowing-in-the-wind/07.png",
+        "assets/projects/blowing-in-the-wind/08.png"
+      ],
+      "layout": "last-full",
+      "aspect": "16 / 9",
+      "grid_gap": "8px",
+      "videos": [
+        {
+          "id": "IHYKBfqZlEU",
+          "title": "Blowing in the Wind",
+          "provider": "youtube"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Saito Chong",
+        "Taiwan Public Television Service program",
+        "Etiuda&Anima International Film Festival Award-winning short film",
+        "9th Kuan Du Film Festival"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "cactus",
+      "title": "Cactus",
+      "year": 2018,
+      "thumb": "assets/work/cactus.png",
+      "password": false,
+      "images": [
+        "assets/projects/cactus/00.png",
+        "assets/projects/cactus/01.png",
+        "assets/projects/cactus/02.png",
+        "assets/projects/cactus/03.png",
+        "assets/projects/cactus/04.png",
+        "assets/projects/cactus/05.png"
+      ],
+      "layout": "grid",
+      "aspect": "2.35 / 1",
+      "grid_gap": "8px",
+      "videos": [
+        {
+          "id": "494377432",
+          "title": "Cactus",
+          "provider": "vimeo"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Saito Chong",
+        "Streaming on Giloo",
+        "South Taiwan Film Festival (2019)",
+        "TAOYUAN INTERNATIONAL DESIGN AWARD (2019)",
+        "Hong kong IndieFF (2019)"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "cave",
+      "title": "Cave",
+      "year": 2018,
+      "thumb": "assets/work/cave.png",
+      "password": false,
+      "images": [
+        "assets/projects/cave/00.png",
+        "assets/projects/cave/01.png",
+        "assets/projects/cave/02.png",
+        "assets/projects/cave/03.png",
+        "assets/projects/cave/04.png"
+      ],
+      "layout": "two-one",
+      "aspect": "2.35 / 1",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "Dir. 林明"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "a-kind-after-sale-service",
+      "title": "A Kind After Sale Service",
+      "year": 2019,
+      "thumb": "assets/work/a-kind-after-sale-service.png",
+      "password": false,
+      "images": [
+        "assets/projects/a-kind-after-sale-service/00.png",
+        "assets/projects/a-kind-after-sale-service/01.png",
+        "assets/projects/a-kind-after-sale-service/02.png",
+        "assets/projects/a-kind-after-sale-service/03.png",
+        "assets/projects/a-kind-after-sale-service/04.png",
+        "assets/projects/a-kind-after-sale-service/05.png",
+        "assets/projects/a-kind-after-sale-service/06.png",
+        "assets/projects/a-kind-after-sale-service/07.png",
+        "assets/projects/a-kind-after-sale-service/08.png",
+        "assets/projects/a-kind-after-sale-service/09.png"
+      ],
+      "layout": "grid",
+      "aspect": "2.43 / 1",
+      "grid_gap": "8px",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "dir. 張家峻"
+      ],
+      "columns": 2
+    },
+    {
+      "slug": "reason",
+      "title": "Reason",
+      "year": 2017,
+      "thumb": "assets/work/reason.png",
+      "password": false,
+      "images": [
+        "assets/projects/reason/00.png",
+        "assets/projects/reason/01.png"
+      ],
+      "layout": "stack",
+      "videos": [],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "none",
+      "awards": [
+        "Dir. 林明",
+        "Super 16mm Film"
+      ]
+    },
+    {
+      "slug": "scattered-over-night",
+      "title": "Scattered Over Night",
+      "year": 2018,
+      "thumb": "assets/work/scattered-over-night.png",
+      "password": false,
+      "images": [],
+      "layout": "stack",
+      "videos": [
+        {
+          "provider": "local",
+          "src": "assets/videos/scattered-over-night-promo.mp4",
+          "title": "Scattered Over Night Promo",
+          "poster": "assets/videos/posters/scattered-over-night-promo.jpg"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir./Dp: BeN Nurhaci lu"
+      ]
+    },
+    {
+      "slug": "black-friday",
+      "title": "Black Friday",
+      "year": 2017,
+      "thumb": "assets/work/black-friday.png",
+      "password": false,
+      "images": [],
+      "layout": "stack",
+      "videos": [
+        {
+          "provider": "local",
+          "src": "assets/videos/black-friday-promo.mp4",
+          "title": "Black Friday Promo",
+          "poster": "assets/videos/posters/black-friday-promo.jpg",
+          "aspect": "16 / 9",
+          "object_fit": "cover",
+          "object_position": "50% 42.2%"
+        }
+      ],
+      "awards_footer": "呂尚睿. 努爾哈赤",
+      "video_status": "ok",
+      "awards": [
+        "Dir. Saito Chong"
+      ]
+    }
+  ],
+  "private_password": "goc2025"
+}

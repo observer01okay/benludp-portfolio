@@ -1,0 +1,184 @@
+{
+  "the-grossness-of-closeness": {},
+  "bisonte": {
+    "title": "Bisonte",
+    "n": 21,
+    "mode_ar": 2.0,
+    "mode_pb": 50.0,
+    "ars": {
+      "2.0": 21
+    },
+    "cols": 3
+  },
+  "kissinger-takes-paris": {
+    "title": "Kissinger Takes Paris",
+    "n": 3,
+    "mode_ar": 2.4,
+    "mode_pb": 41.6667,
+    "ars": {
+      "2.4": 3
+    },
+    "cols": 3
+  },
+  "wabi-sabi": {
+    "title": "Wabi Sabi",
+    "n": 6,
+    "mode_ar": 1.7778,
+    "mode_pb": 56.25,
+    "ars": {
+      "1.7778": 6
+    },
+    "cols": 3
+  },
+  "sparkle-pets": {
+    "title": "Sparkle Pets",
+    "n": 14,
+    "mode_ar": 2.6667,
+    "mode_pb": 37.5,
+    "ars": {
+      "1.8916": 2,
+      "2.6667": 11,
+      "2.663": 1
+    },
+    "cols": 3
+  },
+  "american-body": {
+    "title": "American Body",
+    "n": 25,
+    "mode_ar": 2.3881,
+    "mode_pb": 41.875,
+    "ars": {
+      "2.3881": 17,
+      "1.8915": 1,
+      "1.8917": 1,
+      "1.8986": 1,
+      "1.8938": 1,
+      "2.4": 3,
+      "1.8891": 1
+    },
+    "cols": 3
+  },
+  "enlightenment": {
+    "title": "Enlightenment",
+    "n": 3,
+    "mode_ar": 2.0,
+    "mode_pb": 50.0,
+    "ars": {
+      "2.0": 3
+    },
+    "cols": 3
+  },
+  "ping-tung-commercial-fest": {
+    "title": "Ping Tung Commercial fest",
+    "n": 0
+  },
+  "child-in-winter": {
+    "title": "Child in Winter",
+    "n": 5,
+    "mode_ar": 1.7778,
+    "mode_pb": 56.25,
+    "ars": {
+      "1.7778": 5
+    },
+    "cols": 3
+  },
+  "as-usaul": {
+    "title": "As Usual",
+    "n": 7,
+    "mode_ar": 2.2069,
+    "mode_pb": 45.3125,
+    "ars": {
+      "2.2069": 6,
+      "2.0": 1
+    },
+    "cols": 3
+  },
+  "90": {
+    "title": "90 \u5f8c\u7684\u4fee\u7f85\u4e4b\u8def",
+    "n": 8,
+    "mode_ar": 2.4,
+    "mode_pb": 41.6667,
+    "ars": {
+      "2.4": 8
+    },
+    "cols": 3
+  },
+  "copy-of-bisonte": {
+    "title": "Partner",
+    "n": 7,
+    "mode_ar": 1.7778,
+    "mode_pb": 56.25,
+    "ars": {
+      "1.7778": 7
+    },
+    "cols": 3
+  },
+  "safe-and-sound": {
+    "title": "Safe and Sound",
+    "n": 6,
+    "mode_ar": 2.2387,
+    "mode_pb": 44.6692,
+    "ars": {
+      "2.2387": 6
+    },
+    "cols": 3
+  },
+  "blowing-in-the-wind": {
+    "title": "Blowing in the Wind",
+    "n": 9,
+    "mode_ar": 1.7778,
+    "mode_pb": 56.25,
+    "ars": {
+      "1.7778": 9
+    },
+    "cols": 3
+  },
+  "cactus": {
+    "title": "Cactus",
+    "n": 6,
+    "mode_ar": 2.3517,
+    "mode_pb": 42.5221,
+    "ars": {
+      "2.3575": 1,
+      "2.3517": 4,
+      "2.3501": 1
+    },
+    "cols": 3
+  },
+  "cave": {
+    "title": "Cave",
+    "n": 5,
+    "mode_ar": 2.3501,
+    "mode_pb": 42.5521,
+    "ars": {
+      "2.3501": 1,
+      "2.3674": 1,
+      "2.3762": 1,
+      "2.3792": 1,
+      "1.7778": 1
+    },
+    "cols": 3
+  },
+  "a-kind-after-sale-service": {
+    "title": "A Kind After Sale Service",
+    "n": 10,
+    "mode_ar": 2.4304,
+    "mode_pb": 41.1458,
+    "ars": {
+      "2.4304": 10
+    },
+    "cols": 3
+  },
+  "reason": {
+    "title": "Reason",
+    "n": 0
+  },
+  "scattered-over-night": {
+    "title": "Scattered Over Night",
+    "n": 0
+  },
+  "black-friday": {
+    "title": "Black Friday",
+    "n": 0
+  }
+}

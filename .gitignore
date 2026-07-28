@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+data/*.html
+data/scrape.log
+.venv/
