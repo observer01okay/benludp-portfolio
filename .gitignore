@@ -3,3 +3,4 @@ node_modules/
 data/*.html
 data/scrape.log
 .venv/
+benludp-portfolio/
