@@ -47,17 +47,52 @@ def pwd_hash(password: str) -> str:
 
 
 NAV = [
-    ("", "Work"),  # home — resolves to / or ../ without index.html
-    ("reel.html", "Reel"),
-    ("stills.html", "Stills"),
-    ("info.html", "Info"),
-    ("contact.html", "Contact"),
+    ("", "Work"),  # home — / or ../
+    ("reel/", "Reel"),
+    ("stills/", "Stills"),
+    ("info/", "Info"),
+    ("contact/", "Contact"),
 ]
 
 
 def home_href(prefix: str = "") -> str:
-    """Clean homepage URL: / on root pages, ../ from project pages."""
+    """Clean homepage URL: / on root pages, ../ from nested pages."""
     return f"{prefix}" if prefix else "/"
+
+
+def asset_url(src: str) -> str:
+    """Root-absolute asset path so nested pages (/reel/, /info/) resolve correctly."""
+    s = src.lstrip("./")
+    return s if s.startswith("/") else f"/{s}"
+
+
+def write_redirect(old_file: Path, new_path: str) -> None:
+    """Keep old .html URLs working for bookmarks / Google."""
+    old_file.write_text(
+        f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;url={esc(new_path)}" />
+  <link rel="canonical" href="{esc(SITE_URL + new_path)}" />
+  <title>Redirecting…</title>
+  <script>location.replace({json.dumps(new_path)})</script>
+</head>
+<body>
+  <p><a href="{esc(new_path)}">Continue</a></p>
+</body>
+</html>
+""",
+        encoding="utf-8",
+    )
+
+
+def write_clean_page(slug: str, html: str) -> None:
+    """Write dist/<slug>/index.html for clean /slug/ URLs."""
+    page_dir = DIST / slug
+    page_dir.mkdir(parents=True, exist_ok=True)
+    (page_dir / "index.html").write_text(html, encoding="utf-8")
+    write_redirect(DIST / f"{slug}.html", f"/{slug}/")
 
 
 def header(active: str, brand: str, prefix: str = "") -> str:
@@ -225,7 +260,7 @@ def build() -> None:
         encoding="utf-8",
     )
 
-    # REEL
+    # REEL → /reel/
     reel_body = f"""<section class="reel">
   <div class="reel-frame">
     <iframe src="https://player.vimeo.com/video/{esc(site['reel_vimeo_id'])}?badge=0&autopause=0"
@@ -233,66 +268,73 @@ def build() -> None:
   </div>
   <p class="reel-credit">{esc(site['reel_credit'])}</p>
 </section>"""
-    (DIST / "reel.html").write_text(
+    write_clean_page(
+        "reel",
         layout(
             f"{site['name']} — Cinematography Reel | Taiwanese LA DP",
             reel_body,
             brand,
             "Reel",
-            path="/reel.html",
+            prefix="../",
+            path="/reel/",
             description=(
                 "Watch the cinematography reel of Taiwanese Los Angeles DP Ben Nurhaci Lu — "
                 "narrative film, short film, commercial, and documentary cinematography."
             ),
         ),
-        encoding="utf-8",
     )
 
-    # STILLS
+    # STILLS → /stills/
     still_imgs = "\n".join(
-        f'<img src="{esc(src)}" alt="" loading="lazy" />' for src in site.get("stills", [])
+        f'<img src="{esc(asset_url(src))}" alt="" loading="lazy" />'
+        for src in site.get("stills", [])
     )
     stills_body = f'<section class="stills-stack">\n{still_imgs}\n</section>'
-    (DIST / "stills.html").write_text(
+    write_clean_page(
+        "stills",
         layout(
             f"{site['name']} — Stills | Taiwanese LA Cinematographer",
             stills_body,
             brand,
             "Stills",
-            path="/stills.html",
+            prefix="../",
+            path="/stills/",
             description=(
                 "Film stills from projects by Taiwanese cinematographer and LA DP Ben Nurhaci Lu — "
                 "narrative, commercial, and short film frames."
             ),
         ),
-        encoding="utf-8",
     )
 
-    # INFO
+    # INFO → /info/
     paras = "".join(f"<p>{esc(p)}</p>" for p in site["info_text"].split("\n\n") if p.strip())
     info_img = ""
     info_og = None
     if site.get("info_images"):
         info_og = site["info_images"][0]
-        info_img = f'<img class="info-portrait" src="{esc(site["info_images"][0])}" alt="{esc(brand)}" />'
+        info_img = (
+            f'<img class="info-portrait" src="{esc(asset_url(site["info_images"][0]))}" '
+            f'alt="{esc(brand)}" />'
+        )
     info_body = f'<section class="info">\n{info_img}\n<div class="info-copy">{paras}</div>\n</section>'
-    (DIST / "info.html").write_text(
+    write_clean_page(
+        "info",
         layout(
             f"{site['name']} — About | Taiwanese DP in Los Angeles",
             info_body,
             brand,
             "Info",
-            path="/info.html",
+            prefix="../",
+            path="/info/",
             description=(
                 "About Ben Nurhaci Lu — Taiwanese cinematographer and Asian Director of Photography "
                 "based in Los Angeles. Narrative film, short film, commercial, and documentary DP."
             ),
             og_image=info_og,
         ),
-        encoding="utf-8",
     )
 
-    # CONTACT — Adobe: 655px column, 100px icons in two halves, 25px tagline
+    # CONTACT → /contact/
     contact_body = f"""<section class="contact">
   <h1 class="contact-tagline">{esc(site['contact_tagline'])}</h1>
   <div class="contact-links">
@@ -319,20 +361,21 @@ def build() -> None:
     </a>
   </div>
 </section>"""
-    (DIST / "contact.html").write_text(
+    write_clean_page(
+        "contact",
         layout(
             f"{site['name']} — Contact | Hire Taiwanese LA Cinematographer / DP",
             contact_body,
             brand,
             "Contact",
+            prefix="../",
             footer_text=footer_name,
-            path="/contact.html",
+            path="/contact/",
             description=(
                 "Contact Taiwanese Los Angeles cinematographer and DP Ben Nurhaci Lu — "
                 "hire for narrative film, short film, commercial, and documentary projects in LA."
             ),
         ),
-        encoding="utf-8",
     )
 
     # PROJECT PAGES
@@ -479,10 +522,10 @@ def build() -> None:
     )
     urls = [
         ("/", "1.0"),
-        ("/reel.html", "0.8"),
-        ("/stills.html", "0.8"),
-        ("/info.html", "0.7"),
-        ("/contact.html", "0.6"),
+        ("/reel/", "0.8"),
+        ("/stills/", "0.8"),
+        ("/info/", "0.7"),
+        ("/contact/", "0.6"),
     ]
     for p in site["projects"]:
         if p.get("password"):

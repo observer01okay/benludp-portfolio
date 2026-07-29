@@ -41,6 +41,14 @@ class RangeRequestHandler(BaseHTTPRequestHandler):
             return None
         if candidate.is_file():
             return candidate
+        # /reel → /reel/index.html
+        as_index = (self.root / rel / "index.html").resolve()
+        try:
+            as_index.relative_to(self.root)
+        except ValueError:
+            return None
+        if as_index.is_file():
+            return as_index
         return None
 
     def _serve(self, head_only: bool) -> None:
