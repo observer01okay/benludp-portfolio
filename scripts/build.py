@@ -13,12 +13,24 @@ DATA = ROOT / "data" / "site.json"
 DIST = ROOT / "dist"
 SITE_URL = "https://benludp.com"
 DEFAULT_DESC = (
-    "Ben Nurhaci Lu is a Los Angeles cinematographer and DP "
-    "(Director of Photography) for narrative film, commercials, and documentary. "
-    "LA-based cinematography by Ben Nurhaci Lu."
+    "Ben Nurhaci Lu is a Taiwanese cinematographer and Director of Photography (DP) based in Los Angeles. "
+    "Asian DP in LA for narrative film, short film, commercials, and documentary. "
+    "Los Angeles cinematographer · Taiwanese DP in LA · commercial & narrative cinematography."
 )
 DEFAULT_OG = f"{SITE_URL}/assets/work/the-grossness-of-closeness.jpg"
-HOME_TITLE = "Ben Nurhaci Lu — Los Angeles Cinematographer & DP"
+HOME_TITLE = (
+    "Ben Nurhaci Lu — Taiwanese Cinematographer & DP in Los Angeles"
+)
+# Helps some crawlers; Google largely ignores this, but we keep phrases here too.
+META_KEYWORDS = (
+    "Ben Nurhaci Lu, Ben Lu, Los Angeles cinematographer, LA cinematographer, "
+    "LA DP, Director of Photography Los Angeles, DP in LA, "
+    "Taiwanese cinematographer, Taiwanese DP, Taiwanese cinematographer in LA, "
+    "Asian cinematographer, Asian DP in LA, Asian Director of Photography, "
+    "commercial cinematographer LA, commercial DP Los Angeles, "
+    "narrative cinematographer, short film cinematographer, "
+    "documentary cinematographer, film DP Los Angeles"
+)
 
 
 def esc(s: str) -> str:
@@ -94,6 +106,7 @@ def layout(
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
+  <meta name="keywords" content="{esc(META_KEYWORDS)}" />
   <meta name="author" content="Ben Nurhaci Lu" />
   <link rel="canonical" href="{esc(canonical)}" />
   <meta property="og:type" content="website" />
@@ -158,14 +171,21 @@ def build() -> None:
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Ben Nurhaci Lu",
-        "alternateName": ["Ben Lu", "Ben Nurhaci Lu Cinematographer"],
+        "alternateName": [
+            "Ben Lu",
+            "Ben Nurhaci Lu Cinematographer",
+            "Ben Nurhaci Lu DP",
+        ],
         "url": SITE_URL,
         "jobTitle": [
             "Cinematographer",
             "Director of Photography",
             "DP",
+            "Commercial Cinematographer",
+            "Narrative Cinematographer",
         ],
         "description": DEFAULT_DESC,
+        "nationality": "Taiwanese",
         "email": site.get("email"),
         "address": {
             "@type": "PostalAddress",
@@ -177,10 +197,15 @@ def build() -> None:
         "knowsAbout": [
             "Cinematography",
             "Director of Photography",
+            "DP",
+            "Los Angeles film production",
+            "Taiwanese cinematographer",
+            "Asian cinematographer",
             "Narrative film",
+            "Short film",
             "Commercial cinematography",
             "Documentary cinematography",
-            "Los Angeles film production",
+            "Music video cinematography",
         ],
     }
     home_extra = (
@@ -216,8 +241,8 @@ def build() -> None:
             "Reel",
             path="/reel.html",
             description=(
-                "Watch the cinematography reel of Los Angeles DP Ben Nurhaci Lu — "
-                "narrative, commercial, and documentary work."
+                "Watch the cinematography reel of Taiwanese Los Angeles DP Ben Nurhaci Lu — "
+                "narrative film, short film, commercial, and documentary cinematography."
             ),
         ),
         encoding="utf-8",
@@ -230,14 +255,14 @@ def build() -> None:
     stills_body = f'<section class="stills-stack">\n{still_imgs}\n</section>'
     (DIST / "stills.html").write_text(
         layout(
-            f"{site['name']} — Stills | LA Cinematographer",
+            f"{site['name']} — Stills | Taiwanese LA Cinematographer",
             stills_body,
             brand,
             "Stills",
             path="/stills.html",
             description=(
-                "Film stills and frame grabs from projects shot by Los Angeles "
-                "cinematographer Ben Nurhaci Lu."
+                "Film stills from projects by Taiwanese cinematographer and LA DP Ben Nurhaci Lu — "
+                "narrative, commercial, and short film frames."
             ),
         ),
         encoding="utf-8",
@@ -253,14 +278,14 @@ def build() -> None:
     info_body = f'<section class="info">\n{info_img}\n<div class="info-copy">{paras}</div>\n</section>'
     (DIST / "info.html").write_text(
         layout(
-            f"{site['name']} — About | Los Angeles Cinematographer & DP",
+            f"{site['name']} — About | Taiwanese DP in Los Angeles",
             info_body,
             brand,
             "Info",
             path="/info.html",
             description=(
-                "About Ben Nurhaci Lu, a Los Angeles cinematographer and Director of Photography "
-                "working in narrative film, commercials, and documentary — based in LA, by way of Taiwan."
+                "About Ben Nurhaci Lu — Taiwanese cinematographer and Asian Director of Photography "
+                "based in Los Angeles. Narrative film, short film, commercial, and documentary DP."
             ),
             og_image=info_og,
         ),
@@ -296,15 +321,15 @@ def build() -> None:
 </section>"""
     (DIST / "contact.html").write_text(
         layout(
-            f"{site['name']} — Contact | Hire LA Cinematographer",
+            f"{site['name']} — Contact | Hire Taiwanese LA Cinematographer / DP",
             contact_body,
             brand,
             "Contact",
             footer_text=footer_name,
             path="/contact.html",
             description=(
-                "Contact Los Angeles cinematographer and DP Ben Nurhaci Lu "
-                "for narrative, commercial, and documentary projects."
+                "Contact Taiwanese Los Angeles cinematographer and DP Ben Nurhaci Lu — "
+                "hire for narrative film, short film, commercial, and documentary projects in LA."
             ),
         ),
         encoding="utf-8",
@@ -429,8 +454,8 @@ def build() -> None:
 
         og = p.get("thumb") or (p["images"][0] if p.get("images") else None)
         proj_desc = (
-            f"{p['title']} ({p['year']}) — cinematography by Los Angeles DP Ben Nurhaci Lu. "
-            f"Director of Photography / cinematographer credit."
+            f"{p['title']} ({p['year']}) — cinematography by Taiwanese Los Angeles DP Ben Nurhaci Lu. "
+            f"Director of Photography / cinematographer for narrative, short film, and commercial work."
         )
         (projects_dir / f"{p['slug']}.html").write_text(
             layout(
