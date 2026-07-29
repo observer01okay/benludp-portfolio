@@ -4,6 +4,33 @@ async function sha256(text) {
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+/** Strip Facebook/Google tracking junk (?fbclid=, ?utm_…) from the address bar */
+function stripTrackingParams() {
+  const url = new URL(window.location.href);
+  if (![...url.searchParams.keys()].length) return;
+
+  const drop = new Set([
+    "fbclid",
+    "gclid",
+    "gbraid",
+    "wbraid",
+    "mc_eid",
+    "igshid",
+    "twclid",
+  ]);
+  let changed = false;
+  for (const key of [...url.searchParams.keys()]) {
+    if (drop.has(key) || key.startsWith("utm_")) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+  if (!changed) return;
+
+  const clean = url.pathname + (url.search ? url.search : "") + url.hash;
+  history.replaceState(null, "", clean || "/");
+}
+
 function initPasswordGates() {
   document.querySelectorAll(".password-gate").forEach((gate) => {
     const form = gate.querySelector(".password-form");
@@ -167,6 +194,7 @@ function initLightbox() {
   });
 }
 
+stripTrackingParams();
 initPasswordGates();
 initLightbox();
 initLocalVideos();
