@@ -235,7 +235,7 @@ def build() -> None:
 </section>"""
     (DIST / "reel.html").write_text(
         layout(
-            f"{site['name']} — Cinematography Reel | Los Angeles DP",
+            f"{site['name']} — Cinematography Reel | Taiwanese LA DP",
             reel_body,
             brand,
             "Reel",
