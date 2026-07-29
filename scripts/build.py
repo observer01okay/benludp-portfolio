@@ -91,6 +91,8 @@ def build() -> None:
     DIST.mkdir(parents=True)
     shutil.copy2(ROOT / "styles.css", DIST / "styles.css")
     shutil.copy2(ROOT / "site.js", DIST / "site.js")
+    # Custom domain for GitHub Pages
+    (DIST / "CNAME").write_text("benludp.com\n", encoding="utf-8")
 
     # Copy assets into dist
     assets_src = ROOT / "assets"

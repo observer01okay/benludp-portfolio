@@ -27,11 +27,21 @@ python3 scripts/add_project.py \
 
 Or ask Cursor to add the project for you.
 
-## Free hosting
+## Free hosting (GitHub Pages)
 
-1. Push this repo to GitHub
-2. Deploy `dist/` on **Cloudflare Pages**, **GitHub Pages**, or **Vercel** (all free)
-3. In Hostinger DNS, point `benludp.com` (A/CNAME) at the host
+Site deploys from `dist/` via `.github/workflows/pages.yml`.
+
+**Custom domain DNS (Hostinger):** delete old Adobe/host records for `@` and `www`, then add:
+
+| Type | Name | Value |
+|------|------|-------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `observer01okay.github.io` |
+
+In the repo: Settings → Pages → Custom domain = `benludp.com` → enable **Enforce HTTPS** after DNS is green.
 
 ## Private projects
 
