@@ -11,6 +11,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "site.json"
 DIST = ROOT / "dist"
+SITE_URL = "https://benludp.com"
+DEFAULT_DESC = (
+    "Ben Nurhaci Lu — cinematographer based in Los Angeles. "
+    "Narrative, commercial, and documentary cinematography."
+)
+DEFAULT_OG = f"{SITE_URL}/assets/work/the-grossness-of-closeness.jpg"
 
 
 def esc(s: str) -> str:
@@ -67,15 +73,38 @@ def layout(
     prefix: str = "",
     extra_head: str = "",
     footer_text: str | None = "呂尚睿. 努爾哈赤",
+    path: str = "/",
+    description: str | None = None,
+    og_image: str | None = None,
 ) -> str:
     footer = site_footer(footer_text) if footer_text else ""
+    desc = description or DEFAULT_DESC
+    canonical = f"{SITE_URL}{path}"
+    image = og_image or DEFAULT_OG
+    if image.startswith("/"):
+        image = f"{SITE_URL}{image}"
+    elif not image.startswith("http"):
+        image = f"{SITE_URL}/{image.lstrip('./')}"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{esc(title)}</title>
-  <meta name="description" content="Ben Nurhaci Lu — Cinematographer" />
+  <meta name="description" content="{esc(desc)}" />
+  <meta name="author" content="Ben Nurhaci Lu" />
+  <link rel="canonical" href="{esc(canonical)}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ben Nurhaci Lu Cinematographer" />
+  <meta property="og:title" content="{esc(title)}" />
+  <meta property="og:description" content="{esc(desc)}" />
+  <meta property="og:url" content="{esc(canonical)}" />
+  <meta property="og:image" content="{esc(image)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{esc(title)}" />
+  <meta name="twitter:description" content="{esc(desc)}" />
+  <meta name="twitter:image" content="{esc(image)}" />
+  <meta name="theme-color" content="#f7f7f7" />
   <link rel="stylesheet" href="{prefix}styles.css" />
   {extra_head}
 </head>
@@ -123,8 +152,31 @@ def build() -> None:
 </a>"""
         )
     work_body = f'<section class="work-grid">\n{"".join(cards)}\n</section>'
+    home_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ben Nurhaci Lu",
+        "alternateName": "Ben Lu",
+        "url": SITE_URL,
+        "jobTitle": "Cinematographer",
+        "email": site.get("email"),
+        "sameAs": [s for s in [site.get("instagram")] if s],
+        "worksFor": {"@type": "Organization", "name": "Ben Nurhaci Lu Cinematographer"},
+    }
+    home_extra = (
+        f'<script type="application/ld+json">{json.dumps(home_jsonld, ensure_ascii=False)}</script>'
+    )
     (DIST / "index.html").write_text(
-        layout(f"{site['name']}", work_body, brand, "Work", footer_text=footer_name),
+        layout(
+            f"{site['name']} — Cinematographer",
+            work_body,
+            brand,
+            "Work",
+            footer_text=footer_name,
+            path="/",
+            description=DEFAULT_DESC,
+            extra_head=home_extra,
+        ),
         encoding="utf-8",
     )
 
@@ -137,7 +189,15 @@ def build() -> None:
   <p class="reel-credit">{esc(site['reel_credit'])}</p>
 </section>"""
     (DIST / "reel.html").write_text(
-        layout(f"{site['name']} — Reel", reel_body, brand, "Reel"), encoding="utf-8"
+        layout(
+            f"{site['name']} — Reel",
+            reel_body,
+            brand,
+            "Reel",
+            path="/reel.html",
+            description="Selected cinematography reel by Ben Nurhaci Lu.",
+        ),
+        encoding="utf-8",
     )
 
     # STILLS
@@ -146,17 +206,36 @@ def build() -> None:
     )
     stills_body = f'<section class="stills-stack">\n{still_imgs}\n</section>'
     (DIST / "stills.html").write_text(
-        layout(f"{site['name']} — Stills", stills_body, brand, "Stills"), encoding="utf-8"
+        layout(
+            f"{site['name']} — Stills",
+            stills_body,
+            brand,
+            "Stills",
+            path="/stills.html",
+            description="Still photography and frame grabs by cinematographer Ben Nurhaci Lu.",
+        ),
+        encoding="utf-8",
     )
 
     # INFO
     paras = "".join(f"<p>{esc(p)}</p>" for p in site["info_text"].split("\n\n") if p.strip())
     info_img = ""
+    info_og = None
     if site.get("info_images"):
+        info_og = site["info_images"][0]
         info_img = f'<img class="info-portrait" src="{esc(site["info_images"][0])}" alt="{esc(brand)}" />'
     info_body = f'<section class="info">\n{info_img}\n<div class="info-copy">{paras}</div>\n</section>'
     (DIST / "info.html").write_text(
-        layout(f"{site['name']} — Info", info_body, brand, "Info"), encoding="utf-8"
+        layout(
+            f"{site['name']} — Info",
+            info_body,
+            brand,
+            "Info",
+            path="/info.html",
+            description="About cinematographer Ben Nurhaci Lu — based in Los Angeles, by way of Taiwan.",
+            og_image=info_og,
+        ),
+        encoding="utf-8",
     )
 
     # CONTACT — Adobe: 655px column, 100px icons in two halves, 25px tagline
@@ -187,7 +266,15 @@ def build() -> None:
   </div>
 </section>"""
     (DIST / "contact.html").write_text(
-        layout(f"{site['name']} — Contact", contact_body, brand, "Contact", footer_text=footer_name),
+        layout(
+            f"{site['name']} — Contact",
+            contact_body,
+            brand,
+            "Contact",
+            footer_text=footer_name,
+            path="/contact.html",
+            description="Contact cinematographer Ben Nurhaci Lu.",
+        ),
         encoding="utf-8",
     )
 
@@ -308,6 +395,8 @@ def build() -> None:
         else:
             body = f'<section class="project">\n{inner}\n</section>'
 
+        og = p.get("thumb") or (p["images"][0] if p.get("images") else None)
+        proj_desc = f"{p['title']} ({p['year']}) — cinematography by Ben Nurhaci Lu."
         (projects_dir / f"{p['slug']}.html").write_text(
             layout(
                 f"{site['name']} — {p['title']}",
@@ -316,9 +405,45 @@ def build() -> None:
                 "Work",
                 prefix="../",
                 footer_text=footer_name,
+                path=f"/projects/{p['slug']}.html",
+                description=proj_desc,
+                og_image=og,
             ),
             encoding="utf-8",
         )
+
+    # SEO: robots.txt + sitemap.xml
+    (DIST / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
+    urls = [
+        ("/", "1.0"),
+        ("/reel.html", "0.8"),
+        ("/stills.html", "0.8"),
+        ("/info.html", "0.7"),
+        ("/contact.html", "0.6"),
+    ]
+    for p in site["projects"]:
+        if p.get("password"):
+            continue
+        urls.append((f"/projects/{p['slug']}.html", "0.7"))
+    url_xml = "\n".join(
+        f"""  <url>
+    <loc>{SITE_URL}{path}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>{priority}</priority>
+  </url>"""
+        for path, priority in urls
+    )
+    (DIST / "sitemap.xml").write_text(
+        f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{url_xml}
+</urlset>
+""",
+        encoding="utf-8",
+    )
 
     print(f"Built {DIST} ({len(site['projects'])} projects)")
 

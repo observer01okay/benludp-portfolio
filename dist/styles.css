@@ -722,12 +722,22 @@ body.lightbox-open {
 }
 
 @media (max-width: 900px) {
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
+  :root {
+    --nav-inset: 4.5vw;
+    --grid-inset: 4.5vw;
+    --header-top: 28px;
+    --header-to-grid: 36px;
+    --nav-size: 12px;
+    --brand-size: 16px;
+    --nav-gap: 16px;
+    --gap: 12px;
   }
 
   .site-header {
-    padding-bottom: 64px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding-bottom: var(--header-to-grid);
   }
 
   .brand {
@@ -736,42 +746,114 @@ body.lightbox-open {
     top: auto;
     bottom: auto;
     transform: none;
+    order: -1;
     display: block;
-    margin: 0 0 12px;
+    width: 100%;
+    margin: 0;
     white-space: normal;
-    text-align: left;
+    text-align: center;
+    line-height: 1.25;
   }
 
   .nav {
     max-width: none;
+    width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px 18px;
+  }
+
+  .nav a {
+    padding: 6px 2px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-grid:not(.layout-two-one) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main {
+    padding-bottom: 72px;
   }
 }
 
 @media (max-width: 560px) {
+  :root {
+    --nav-inset: 16px;
+    --grid-inset: 16px;
+    --header-top: 20px;
+    --header-to-grid: 28px;
+    --nav-size: 11px;
+    --brand-size: 14px;
+    --nav-gap: 12px;
+    --gap: 10px;
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
+    padding-bottom: 64px;
   }
 
   .nav {
-    gap: 14px;
+    gap: 12px 14px;
+    justify-content: flex-start;
+  }
+
+  .brand {
+    text-align: left;
+    font-size: var(--brand-size);
+  }
+
+  .project-grid,
+  .project-grid.layout-two-one,
+  .project-grid.layout-fill-last-two {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid.layout-two-one img:nth-child(n + 3),
+  .project-grid.layout-last-full img:last-child,
+  .project-grid.layout-fill-last-two > *,
+  .project-grid.layout-fill-last-two > *:nth-last-child(2):nth-child(3n + 1),
+  .project-grid.layout-fill-last-two > *:nth-last-child(1):nth-child(3n + 2) {
+    grid-column: auto;
+  }
+
+  .project-title {
+    font-size: clamp(16px, 5vw, 20px);
+    padding: 0 4px;
   }
 
   .contact {
-    padding-top: 72px;
+    padding-top: 56px;
   }
 
   .contact-links {
-    margin-top: 72px;
+    margin-top: 56px;
   }
 
   .icon-link,
   .icon-link svg {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
   }
 
   .site-footer {
-    padding: 48px 0 64px;
+    padding: 40px 0 56px;
+  }
+
+  .local-video-play-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* iPad portrait / small tablet sweet spot */
+@media (min-width: 561px) and (max-width: 900px) {
+  .work-card .work-meta {
+    opacity: 1;
   }
 }
