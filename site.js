@@ -31,6 +31,14 @@ function stripTrackingParams() {
   history.replaceState(null, "", clean || "/");
 }
 
+/** Prefer / over /index.html in the address bar */
+function cleanIndexPath() {
+  const { pathname, search, hash } = window.location;
+  if (!pathname.endsWith("/index.html")) return;
+  const dir = pathname.slice(0, -"index.html".length) || "/";
+  history.replaceState(null, "", dir + search + hash);
+}
+
 function initPasswordGates() {
   document.querySelectorAll(".password-gate").forEach((gate) => {
     const form = gate.querySelector(".password-form");
@@ -195,6 +203,7 @@ function initLightbox() {
 }
 
 stripTrackingParams();
+cleanIndexPath();
 initPasswordGates();
 initLightbox();
 initLocalVideos();

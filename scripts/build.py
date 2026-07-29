@@ -27,7 +27,7 @@ def pwd_hash(password: str) -> str:
 
 
 NAV = [
-    ("index.html", "Work"),
+    ("", "Work"),  # home — resolves to / or ../ without index.html
     ("reel.html", "Reel"),
     ("stills.html", "Stills"),
     ("info.html", "Info"),
@@ -35,14 +35,21 @@ NAV = [
 ]
 
 
+def home_href(prefix: str = "") -> str:
+    """Clean homepage URL: / on root pages, ../ from project pages."""
+    return f"{prefix}" if prefix else "/"
+
+
 def header(active: str, brand: str, prefix: str = "") -> str:
     links = []
+    home = home_href(prefix)
     for href, label in NAV:
+        target = home if href == "" else f"{prefix}{href}"
         cls = ' class="is-active"' if label.lower() == active.lower() else ""
-        links.append(f'<a href="{prefix}{href}"{cls}>{label}</a>')
+        links.append(f'<a href="{target}"{cls}>{label}</a>')
     return f"""<header class="site-header">
   <nav class="nav">{"".join(links)}</nav>
-  <a class="brand" href="{prefix}index.html">{esc(brand)}</a>
+  <a class="brand" href="{home}">{esc(brand)}</a>
 </header>"""
 
 
