@@ -155,6 +155,9 @@ def layout(
   <meta name="twitter:description" content="{esc(desc)}" />
   <meta name="twitter:image" content="{esc(image)}" />
   <meta name="theme-color" content="#f7f7f7" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="stylesheet" href="{prefix}styles.css" />
   {extra_head}
 </head>
@@ -179,6 +182,10 @@ def build() -> None:
     shutil.copy2(ROOT / "site.js", DIST / "site.js")
     # Custom domain for GitHub Pages
     (DIST / "CNAME").write_text("benludp.com\n", encoding="utf-8")
+    for name in ("favicon.ico", "favicon.svg", "favicon-32.png", "apple-touch-icon.png"):
+        src = ROOT / "assets" / name
+        if src.exists():
+            shutil.copy2(src, DIST / name)
 
     # Copy assets into dist
     assets_src = ROOT / "assets"
