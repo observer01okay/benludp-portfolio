@@ -41,7 +41,7 @@
       "title": "Grossness of Closeness",
       "year": 2025,
       "thumb": "assets/work/the-grossness-of-closeness.jpg",
-      "password": true,
+      "password": false,
       "images": [
         "assets/projects/the-grossness-of-closeness/00.jpg",
         "assets/projects/the-grossness-of-closeness/01.jpg",
