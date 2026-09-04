@@ -87,6 +87,28 @@ def write_redirect(old_file: Path, new_path: str) -> None:
     )
 
 
+def write_external_redirect(slug: str, url: str, title: str = "Redirecting…") -> None:
+    """Short vanity path (e.g. /goc/) that jumps to an external URL."""
+    page_dir = DIST / slug
+    page_dir.mkdir(parents=True, exist_ok=True)
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;url={esc(url)}" />
+  <meta name="robots" content="noindex" />
+  <title>{esc(title)}</title>
+  <script>location.replace({json.dumps(url)})</script>
+</head>
+<body>
+  <p><a href="{esc(url)}">Continue</a></p>
+</body>
+</html>
+"""
+    (page_dir / "index.html").write_text(html, encoding="utf-8")
+    write_redirect(DIST / f"{slug}.html", f"/{slug}/")
+
+
 def write_clean_page(slug: str, html: str) -> None:
     """Write dist/<slug>/index.html for clean /slug/ URLs."""
     page_dir = DIST / slug
@@ -521,6 +543,10 @@ def build() -> None:
             ),
             encoding="utf-8",
         )
+
+    # Short vanity links → external shares (Vimeo, etc.)
+    for link in site.get("short_links", []):
+        write_external_redirect(link["slug"], link["url"], link.get("title", "Redirecting…"))
 
     # SEO: robots.txt + sitemap.xml
     (DIST / "robots.txt").write_text(
